@@ -5,7 +5,7 @@
 
 # Insights:
 
-<img width="512px" src="https://user-images.githubusercontent.com/56306485/160014333-44036bb1-ee84-4c69-a7e2-244b4a76b377.png">
+<img width="1080px" src="https://user-images.githubusercontent.com/56306485/160014333-44036bb1-ee84-4c69-a7e2-244b4a76b377.png">
 
 ---
 

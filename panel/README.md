@@ -9,12 +9,12 @@
 
 ---
 
-# Account & Permission Management:
-
-![image](https://user-images.githubusercontent.com/56306485/160014498-d3289faa-9d76-4352-bac8-2e32d19649b7.png)
-
----
-
 # Logs:
 
 ![image](https://user-images.githubusercontent.com/56306485/160014990-01bb67fa-b7dd-422f-954e-30c26a3e54fc.png)
+
+---
+
+# Account & Permission Management:
+
+![image](https://user-images.githubusercontent.com/56306485/160014498-d3289faa-9d76-4352-bac8-2e32d19649b7.png)

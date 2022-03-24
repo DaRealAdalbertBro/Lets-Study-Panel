@@ -1,0 +1,914 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #212a3d;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#popup {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    justify-content: center;
+    align-content: center;
+    animation: fadeIn 0.4s;
+}
+
+#popup .box .line {
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: #a6bcff;
+    opacity: 0.5;
+    height: 3px;
+    transition: 0.2s;
+}
+
+#popup .box {
+    display: block;
+    justify-self: center;
+    align-self: center;
+    background-color: #0f1a34;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(250, 250, 250);
+    width: auto;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeIn 0.4s;
+}
+
+#popup .box h1 {
+    padding-top: 40px;
+    font-size: 28px;
+    word-break: keep-all;
+    text-transform: uppercase;
+    animation: fadeIn 0.4s;
+}
+
+#popup .box p {
+    color: rgb(189, 189, 189);
+    padding-top: 16px;
+    padding-bottom: 32px;
+    padding-right: 32px;
+    padding-left: 32px;
+    font-size: 14px;
+    text-transform: none;
+    font-family: sans-serif;
+    line-height: 22px;
+    animation: fadeIn 0.5s;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+#popup .box .nevermind {
+    background-color: rgb(126, 35, 35);
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 14px;
+    padding: 12px 24px 12px 24px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s;
+    margin-bottom: 40px;
+    font-weight: 500;
+    animation: fadeIn 0.6s;
+}
+
+#popup .box .continue {
+    background-color: rgb(33, 139, 68);
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 14px;
+    padding: 12px 24px 12px 24px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    animation: fadeIn 0.6s;
+}
+
+#popup .box .continue:hover {
+    background-color: rgb(30, 122, 61);
+}
+
+#popup .box .nevermind:hover {
+    background-color: rgb(109, 30, 30);
+}
+
+#main {
+    transition: 0.2s;
+}
+
+.nav {
+    display: inline-block;
+    position: relative;
+    min-width: 80px;
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+    min-height: 100vh;
+    box-shadow: #0f1a34 0px 0px 10px;
+    background-color: #0f1a34;
+    z-index: 1000;
+}
+
+.nav .logo {
+    width: 52px;
+    height: 52px;
+}
+
+.nav .box {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .box:nth-child(3) {
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.nav .line {
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: #a6bcff;
+    opacity: 0.5;
+    height: 3px;
+    transition: 0.2s;
+}
+
+.nav .title:hover,
+.nav .logo:hover {
+    cursor: help;
+}
+
+.nav .title {
+    margin-left: 15px;
+    color: white;
+    color: white;
+    font-size: 26px;
+    font-family: 'Poppins';
+    word-break: break-all;
+    font-weight: 900;
+}
+
+.nav .item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    font-family: 'Poppins';
+    font-weight: 100;
+    line-height: 20px;
+    word-break: normal;
+    margin-top: 24px;
+    font-size: 22px;
+    color: white;
+    opacity: 0.85;
+    transition: 0.8s;
+    background-color: #172952;
+    padding: 14px 20px 14px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 80%;
+}
+
+.nav i {
+    display: block;
+    color: white;
+}
+
+.nav .item span {
+    align-self: center;
+    margin-left: 12px;
+    font-size: 16px;
+}
+
+.nav .item:hover {
+    opacity: 1;
+}
+
+.main {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row;
+}
+
+.top {
+    background-color: rgba(47, 59, 82, 0.527);
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    z-index: 0;
+    display: flex;
+    align-content: flex-end;
+    justify-content: right;
+}
+
+.top .content {
+    flex-direction: row;
+    align-self: center;
+    line-height: 20px;
+}
+
+.top .logo {
+    align-self: center;
+    margin-right: 12px;
+    width: 64px;
+    height: 64px;
+}
+
+.top .user_name {
+    color: white;
+    margin-right: 42px;
+    display: flex;
+    align-self: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.top .position {
+    color: white;
+    margin-right: 42px;
+    display: flex;
+    align-self: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.serverData {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-right: 4px;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 100px;
+    margin-left: 24px;
+}
+
+.serverData .container {
+    border-radius: 6px;
+    background-color: rgb(47,59,82);
+    width: 80%;
+    height: 400px;
+    display: inline-block;
+    margin: 32px 12px 32px 12px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.serverData .secc {
+    display: block;
+    max-width: 100%;
+}
+
+.serverData .sec {
+    display: flex;
+}
+
+.serverData .sec .container {
+    border-radius: 6px;
+    background-color: rgb(47,59,82);
+    width: auto;
+    min-width: 39.2%;
+    height: 400px;
+    display: inline-block;
+    margin: 32px 12px 32px 12px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    
+}
+
+.chart-canvas {
+    height: 400px;
+    padding: 32px;
+}
+
+@media (max-width: 900px) {
+    .serverData .sec {
+        flex-direction: column;
+    }
+}
+
+/* BTN */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: #1c2330;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 172px;
+    font-family: sans-serif;
+    border-radius: 4px;
+    z-index: 2003;
+    margin-left: 12px;
+    margin-top: 12px;
+    border: black 1px solid;
+}
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    text-align: left;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1c2330;
+    width: 172px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 98;
+    left: -1px;
+    top: 42px;
+    border: black 1px solid;
+    border-radius: 2px;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #121720}
+
+.show {display:block;}
+
+#dropicon {
+    margin-left: 8px;
+    margin-top: 1px;
+    float: right;
+    cursor: pointer;
+}
+
+#dropicon2 {
+    margin-left: 8px;
+    margin-top: 1px;
+    font-size: 12px;
+    opacity: 0.4;
+    cursor: pointer
+}
+
+#dropicon2:hover {
+    opacity: 0.9;
+}
+
+.serverData .settings .sTitle {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.serverData .analytics {
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+.cTitle {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+
+.serverData .settings .text {
+    color: rgba(255, 255, 255, 0.65);
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: 12px;
+}
+
+.serverData .settings .from {
+    position: relative;
+    display: inline-block;
+    background-color: #1c2330;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 12px;
+    font-size: 16px;
+    width: max-content;
+    height: max-content;
+    font-family: sans-serif;
+    border-radius: 4px;
+    z-index: 2001;
+    margin-top: 12px;
+    border: black 1px solid;
+    margin-left: 12px;
+}
+
+.serverData .settings .calendarFrom {
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    text-align: left;
+    width: 102px;
+    border: none;
+    outline: none;
+    cursor: text;
+}
+
+.serverData .settings .to {
+    position: relative;
+    display: inline-block;
+    background-color: #1c2330;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 12px;
+    font-size: 16px;
+    width: 172px;
+    font-family: sans-serif;
+    border-radius: 4px;
+    z-index: 2000;
+    margin-top: 12px;
+    border: black 1px solid;
+    margin-left: 12px;
+}
+
+.serverData .settings .calendarTo {
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    text-align: left;
+    width: 102px;
+    border: none;
+    outline: none;
+    cursor: text;
+}
+
+#calendariconFrom,
+#calendariconTo {
+    margin-left: 8px;
+    margin-top: 1px;
+    float: right;
+    cursor: pointer;
+    z-index: 96;
+}
+
+/* CALENDAR */
+.from .container,
+.to .container {
+    display: none;
+    position: absolute;
+    background-color: #252e3f;
+    width: 386px;
+    height: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    left: -193px;
+    top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.253) 0px 0px 10px;
+    border: black 1px solid;
+    border-radius: 2px;
+    z-index: 3000;
+}
+
+.from .container .days,
+.to .container .days {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+
+#titleMonth {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    color: white;
+    padding-bottom: 20px;
+    border-bottom: #3655b3 1px solid;
+}
+
+
+.from .container .dateTitle,
+.to .container .dateTitle {
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 1px;
+}
+
+.from .container .dateTitle #month,
+.from .container .dateTitle span,
+.to .container .dateTitle #month,
+.to .container .dateTitle span {
+    margin-right: 8px;
+}
+
+.from .container .switchL,
+.to .container .switchL {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 22px;
+}
+
+.from .container .switchR,
+.to .container .switchR {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 22px;
+}
+
+
+.from .container .days,
+.to .container .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 400;
+    font-size: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.from .container .days span,
+.to .container .days span {
+    display: grid;
+    place-items: center;
+}
+
+.calendar-body {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 16px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 45.5px);
+    gap: 2px;
+    color: rgba(255, 255, 255, 1);
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+
+.calendar-days div {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.calendar-days div:hover {
+    background-color: #1d243180;
+    color: white;
+    border-radius: 50%;
+}
+
+.calendar-days div.curr-date,
+.calendar-days div.curr-dateTO {
+    background-color: #1d2431;
+    color: white;
+    border-radius: 50%;
+}
+.calendar-days div.last-date,
+.calendar-days div.next-date {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.205);
+    pointer-events: none;
+}
+
+.calendar-days div.last-dateTO,
+.calendar-days div.next-dateTO {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.205);
+    pointer-events: none;
+}
+
+.calendar-days div.next-dateTO:hover,
+.calendar-days div.last-dateTO:hover,
+.calendar-days div.next-date:hover,
+.calendar-days div.last-date:hover {
+    background-color: transparent;
+}
+
+@media (max-width: 1320px) {
+    .nav {
+        position: relative;
+        width: 80px;
+        height: auto;
+        min-height: 100vh;
+    }
+    .nav .title {
+        display: none;
+    }
+    .nav .item span {
+        display: none;
+    }
+    .serverData .sec {
+        flex-direction: column;
+    }
+    .serverData .sec .container {
+        width: 80%;
+        display: flex;
+    }
+    
+}
+
+.administrationPanel {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-right: 4px;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 100px;
+    margin-left: 24px;
+}
+
+.postsPanel {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-right: 4px;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 100px;
+    margin-left: 24px;
+}
+
+.accountsPanel {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-right: 4px;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 100px;
+    margin-left: 24px;
+}
+
+.administrationPanel table,
+.accountsPanel table {
+    display: table;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+  }
+
+.administrationPanel th, .administrationPanel td,
+.accountsPanel th, .accountsPanel td {
+    display: table-cell;
+    text-align: left;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    line-height: normal;
+}
+
+.administrationPanel td,
+.accountsPanel td {
+    color: rgb(204, 204, 204);
+    font-style: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.accountsPanel td #newpasswordInput {
+    background-color: #203c795d;
+    outline: none;
+    border: none;
+    color: rgb(0, 182, 214);
+    padding: 4px;
+    border-radius: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+    letter-spacing: 1px;
+}
+
+.accountsPanel td input[type="text"] {
+    background-color: #2941755b;
+    outline: none;
+    border: none;
+    color: rgb(73, 201, 90);
+    padding: 4px;
+    border-radius: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.administrationPanel tr,
+.accountsPanel tr {
+    transition: 0.2s;
+}
+
+
+.administrationPanel table tr:nth-child(even),
+.accountsPanel table tr:nth-child(even) {
+    background-color: #1c2330;
+}
+.administrationPanel table tr:nth-child(even):last-child {
+    background-color: transparent;
+}
+
+.accountsPanel table tr:first-child:hover {background-color: transparent}
+.accountsPanel table tr:hover {background-color: #172952}
+
+.administrationPanel table tr:first-child:hover {background-color: transparent}
+.administrationPanel table tr:hover {background-color: #172952}
+.administrationPanel table tr:last-child:hover {background-color: transparent}
+
+.administrationPanel table .tableTitle,
+.accountsPanel table .tableTitle {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.accountsPanel .save {
+    margin-top: 10px;
+    background-color: rgb(45, 139, 33);
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 18px;
+    padding: 12px 24px 12px 24px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-right: 18px;
+}
+
+.accountsPanel .save:hover {
+    background-color: rgb(40, 124, 29);
+}
+
+.accountsPanel #addNew {
+    margin-top: 10px;
+    background-color: rgb(136, 37, 37);
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 18px;
+    padding: 12px 24px 12px 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.accountsPanel #addNew:hover {
+    background-color: rgb(122, 34, 34);
+}
+
+.disabled {
+    opacity: 0.4;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.accountsPanel #removeFromUsers {
+    color: rgb(158, 49, 49);
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.1s;
+}
+
+.accountsPanel #removeFromUsers:hover {
+    color: rgb(238, 68, 68);
+}
+
+.administrationPanel #thisiawhdj,
+.accountsPanel #thisiawhdj {
+    color: rgb(255, 166, 0);
+    margin-top: 24px;
+    font-size: 13px;
+    margin-left: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+#showpass {
+    color: rgb(255, 255, 255);
+    margin-left: 8px;
+    margin-top: 1px;
+    font-size: 12px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#noresults,
+#noresults2,
+#noresults3 {
+    display: none;
+    position: relative;
+    height: 320px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
